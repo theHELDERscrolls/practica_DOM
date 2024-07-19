@@ -317,9 +317,10 @@ main {
   height: 10em;
   padding: 1em;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  gap: 0.5em;
+  gap: 1em;
 
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -336,7 +337,6 @@ main {
   border: 3px solid var(--color-primary);
   border-radius: 10px;
   background-color: var(--color-background);
-  font-family: "Balgruf";
   font-weight: bold;
   font-size: 1.1em;
   color: var(--color-primary);
@@ -345,12 +345,37 @@ main {
   transition: all 0.3s;
 }
 
+/*========== ALL ==========*/
+.filter_all:hover {
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+
+  transform: scale(1.1);
+}
+
+.filter_all:active {
+  transform: scale(1);
+}
+
+.filter_all:focus {
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+  box-shadow: 0px 0px 10px 2px var(--color-primary);
+}
+
+
+/*========== WARRIOR ==========*/
 .filter_warrior:hover {
   background-image: url(assets/img/buttons/button_warrior.jpg);
   background-position: center;
-  border: 2px solid #ff4500;
+  background-size: cover;
+  border: 3px solid #ff4500;
   color: #ff4500;
-  text-shadow: 3px 3px 3px var(--color-textshadow);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
 
   transform: scale(1.1);
 }
@@ -362,8 +387,112 @@ main {
 .filter_warrior:focus {
   background-image: url(assets/img/buttons/button_warrior.jpg);
   background-position: center;
-  border: 2px solid #ff4500;
+  background-size: cover;
+  border: 3px solid #ff4500;
   color: #ff4500;
-  text-shadow: 3px 3px 3px var(--color-textshadow);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
   box-shadow: 0px 0px 10px 2px #ffa17e;
+}
+/*========== THIEF ==========*/
+.filter_thief:hover {
+  background-image: url(assets/img/buttons/button_thief.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #7cfc00;
+  color: #7cfc00;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+
+  transform: scale(1.1);
+}
+
+.filter_thief:active {
+  transform: scale(1);
+}
+
+.filter_thief:focus {
+  background-image: url(assets/img/buttons/button_thief.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #7cfc00;
+  color: #7cfc00;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+  box-shadow: 0px 0px 10px 2px #c3ff86;
+}
+
+/*========== MAGE ==========*/
+.filter_mage:hover {
+  background-image: url(assets/img/buttons/button_mage.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #5f005f;
+  color: #5f005f;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+
+  transform: scale(1.1);
+}
+
+.filter_mage:active {
+  transform: scale(1);
+}
+
+.filter_mage:focus {
+  background-image: url(assets/img/buttons/button_mage.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #5f005f;
+  color: #5f005f;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+  box-shadow: 0px 0px 10px 2px #795979;
+}
+
+/*========== RATING ==========*/
+.filter_rating:hover {
+  background-image: url(assets/img/buttons/button_rating.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+
+  transform: scale(1.1);
+}
+
+.filter_rating:active {
+  transform: scale(1);
+}
+
+.filter_rating:focus {
+  background-image: url(assets/img/buttons/button_rating.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+  box-shadow: 0px 0px 10px 2px var(--color-primary);
+}
+
+/*========== PRICE ==========*/
+.filter_price:hover {
+  background-image: url(assets/img/buttons/button_septims.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #ffd700;
+  color: #ffd700;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+
+  transform: scale(1.1);
+}
+
+.filter_price:active {
+  transform: scale(1);
+}
+
+.filter_price:focus {
+  background-image: url(assets/img/buttons/button_septims.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #ffd700;
+  color: #ffd700;
+  text-shadow: 5px 5px 5px var(--color-textshadow);
+  box-shadow: 0px 0px 10px 2px #c9b77c;
 }
