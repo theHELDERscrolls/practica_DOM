@@ -297,7 +297,6 @@ header {
 /*SHOP*/
 
 main {
-  border: 2px solid red;
   width: 100%;
   height: auto;
   background-color: #3e1c01;
@@ -366,7 +365,6 @@ main {
   text-shadow: 5px 5px 5px var(--color-textshadow);
   box-shadow: 0px 0px 10px 2px var(--color-primary);
 }
-
 
 /*========== WARRIOR ==========*/
 .filter_warrior:hover {
@@ -495,4 +493,57 @@ main {
   color: #ffd700;
   text-shadow: 5px 5px 5px var(--color-textshadow);
   box-shadow: 0px 0px 10px 2px #c9b77c;
+}
+
+/*===SHOP CARDS===*/
+#shop {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.item_shop {
+  /* border: 2px solid greenyellow; */
+  padding: 1em;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.icon-item_shop {
+  border: 1px solid red;
+  width: auto;
+  height: 3em;
+  filter: invert(1);
+}
+
+.image-item_shop {
+  border: 1px solid red;
+  width: auto;
+  height: 10em;
+}
+
+.name-item_shop {
+  border: 1px solid rgb(1, 204, 1);
+}
+
+.seller-item_shop {
+  border: 1px solid orange;
+}
+
+.rating-item_shop {
+  border: 1px solid blue;
+}
+
+.price-item_shop {
+  border: 1px solid yellow;
+}
+
+.button-item_shop {
+  border: 1px solid rgb(102, 33, 151);
+  width: 3em;
 }

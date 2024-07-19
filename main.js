@@ -500,7 +500,7 @@ function createShopCards(productsArray) {
 
     /*=== SELLER === */
     let seller = document.createElement("h4");
-    let sellerText = document.createTextNode(product.seller);
+    let sellerText = document.createTextNode("Seller: " + product.seller);
     seller.className = "seller-item_shop";
     seller.appendChild(sellerText);
     div.appendChild(seller);
@@ -524,6 +524,7 @@ function createShopCards(productsArray) {
     /*=== BUY BUTTON === */
     let buyButton = document.createElement("button");
     let buyButtonText = document.createTextNode("BUY");
+    buyButton.className="button-item_shop"
     buyButton.appendChild(buyButtonText);
     div.appendChild(buyButton);
 
