@@ -52,7 +52,7 @@ header {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "wellcome houses news"
@@ -146,6 +146,7 @@ header {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     gap: 1em;
@@ -316,7 +317,7 @@ main {
   background-image: url(assets/img/dark-wood.png);
 
   h2 {
-    padding: 1em;
+    padding-top: 1em;
     font-size: 4em;
     font-family: "Balgruf";
     text-align: center;
@@ -329,7 +330,8 @@ main {
   position: sticky;
   top: 0;
   z-index: 1;
-  height: 10em;
+  width: 100%;
+  height: auto;
   padding: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -660,5 +662,74 @@ main {
   .icon-item_shop {
     background-color: #5f005f;
     box-shadow: 0px 0px 3px 1px #5f005f;
+  }
+}
+
+/*FOOTER*/
+
+footer {
+  padding: 1em;
+  width: 100%;
+  height: 15vh;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: "Balgruf";
+    font-weight: 100;
+    color: var(--color-tertiary);
+  }
+
+  a:hover {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  header {
+    grid-template-areas:
+      "wellcome houses houses"
+      "wellcome news news"
+      "social maps maps";
+  }
+
+  #houses {
+    p {
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "wellcome"
+      "social"
+      "houses"
+      "news"
+      "maps";
+  }
+
+  #houses {
+    width: 100%;
+    h3 {
+      height: 100%;
+    }
+
+    p {
+      height: 100%;
+    }
+  }
+
+  #filter {
+    position: relative;
   }
 }

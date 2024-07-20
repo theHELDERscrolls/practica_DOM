@@ -599,12 +599,19 @@ styleByClass();
 al main según el botón que se pulse. */
 
 /*ALL*/
-document
-  .querySelector(".filter_all")
-  .addEventListener("click", createShopCards);
+function filteredAll() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  products.sort((a, b) => a.name.localeCompare(b.name));
+  createShopCards(products);
+  addStarsToProducts(products);
+  styleByClass();
+}
+
+document.querySelector(".filter_all").addEventListener("click", filteredAll);
 
 /*WARRIOR*/
-const filterWarrior = [];
+const filterByWarrior = [];
 for (const product of products) {
   if (
     product.class === "Heavy Armor" ||
@@ -614,15 +621,15 @@ for (const product of products) {
     product.class === "War Axe" ||
     product.class === "Health"
   ) {
-    filterWarrior.push(product);
+    filterByWarrior.push(product);
   }
 }
 
 function filteredWarrior() {
   const shop = document.querySelector("#shop");
   shop.innerHTML = "";
-  createShopCards(filterWarrior);
-  addStarsToProducts(filterWarrior);
+  createShopCards(filterByWarrior);
+  addStarsToProducts(filterByWarrior);
   styleByClass();
 }
 
@@ -631,7 +638,7 @@ document
   .addEventListener("click", filteredWarrior);
 
 /*THIEF*/
-const filterThief = [];
+const filterByThief = [];
 for (const product of products) {
   if (
     product.class === "Light Armor" ||
@@ -640,18 +647,69 @@ for (const product of products) {
     product.class === "Dagger" ||
     product.class === "Stamina"
   ) {
-    filterThief.push(product);
+    filterByThief.push(product);
   }
 }
 
 function filteredThief() {
   const shop = document.querySelector("#shop");
   shop.innerHTML = "";
-  createShopCards(filterThief);
-  addStarsToProducts(filterThief);
+  createShopCards(filterByThief);
+  addStarsToProducts(filterByThief);
   styleByClass();
 }
 
 document
   .querySelector(".filter_thief")
   .addEventListener("click", filteredThief);
+
+/*MAGE*/
+const filterByMage = [];
+for (const product of products) {
+  if (
+    product.class === "Staff" ||
+    product.class === "Spell" ||
+    product.class === "Robe" ||
+    product.class === "Magicka"
+  ) {
+    filterByMage.push(product);
+  }
+}
+
+function filteredMage() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  createShopCards(filterByMage);
+  addStarsToProducts(filterByMage);
+  styleByClass();
+}
+
+document.querySelector(".filter_mage").addEventListener("click", filteredMage);
+
+/*RATING*/
+function filteredRating() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  products.sort((a, b) => b.stars - a.stars);
+  createShopCards(products);
+  addStarsToProducts(products);
+  styleByClass();
+}
+
+document
+  .querySelector(".filter_rating")
+  .addEventListener("click", filteredRating);
+
+/*PRICE*/
+function filteredPrice() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  products.sort((a, b) => b.price - a.price);
+  createShopCards(products);
+  addStarsToProducts(products);
+  styleByClass();
+}
+
+document
+  .querySelector(".filter_price")
+  .addEventListener("click", filteredPrice);
