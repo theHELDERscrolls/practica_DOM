@@ -5,6 +5,19 @@
   font-style: normal;
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 50px;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
 :root {
   --color-primary: white;
   --color-secondary: black;
@@ -313,6 +326,9 @@ main {
 }
 
 #filter {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   height: 10em;
   padding: 1em;
   display: flex;
@@ -518,6 +534,10 @@ main {
   box-shadow: 0px 0px 3px 1px var(--color-primary);
 
   transition: all 0.3s;
+
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
 }
 
 .item_shop:hover {

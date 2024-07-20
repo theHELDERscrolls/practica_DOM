@@ -538,7 +538,6 @@ function createShopCards(productsArray) {
 createShopCards(products);
 
 /* Función para añadir estrellas según el valor de stars de cada objeto */
-
 function addStarsToProducts(productsArray) {
   productsArray.forEach((product, index) => {
     const ratingDiv = document.querySelectorAll(".rating-item_shop")[index];
@@ -595,3 +594,64 @@ function styleByClass() {
 }
 
 styleByClass();
+
+/* Función para filtrar el array principal de productos y añadirlos
+al main según el botón que se pulse. */
+
+/*ALL*/
+document
+  .querySelector(".filter_all")
+  .addEventListener("click", createShopCards);
+
+/*WARRIOR*/
+const filterWarrior = [];
+for (const product of products) {
+  if (
+    product.class === "Heavy Armor" ||
+    product.class === "Shield" ||
+    product.class === "Two handed" ||
+    product.class === "Mace" ||
+    product.class === "War Axe" ||
+    product.class === "Health"
+  ) {
+    filterWarrior.push(product);
+  }
+}
+
+function filteredWarrior() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  createShopCards(filterWarrior);
+  addStarsToProducts(filterWarrior);
+  styleByClass();
+}
+
+document
+  .querySelector(".filter_warrior")
+  .addEventListener("click", filteredWarrior);
+
+/*THIEF*/
+const filterThief = [];
+for (const product of products) {
+  if (
+    product.class === "Light Armor" ||
+    product.class === "Bow" ||
+    product.class === "One handed" ||
+    product.class === "Dagger" ||
+    product.class === "Stamina"
+  ) {
+    filterThief.push(product);
+  }
+}
+
+function filteredThief() {
+  const shop = document.querySelector("#shop");
+  shop.innerHTML = "";
+  createShopCards(filterThief);
+  addStarsToProducts(filterThief);
+  styleByClass();
+}
+
+document
+  .querySelector(".filter_thief")
+  .addEventListener("click", filteredThief);
