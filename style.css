@@ -729,7 +729,78 @@ footer {
     }
   }
 
-  #filter {
-    position: relative;
+  .filter_button {
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--color-primary);
+    border-radius: 10px;
+    background-color: var(--color-background);
+    font-size: 0px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter_all {
+    font-size: 16px;
+    border: 3px solid var(--color-primary);
+  }
+
+  .filter_all:focus {
+    box-shadow: 0px 0px 10px 2px var(--color-primary);
+  }
+
+  .filter_warrior {
+    background-image: url(assets/img/buttons/button_warrior.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 3px solid #ff4500;
+  }
+
+  .filter_warrior:focus {
+    box-shadow: 0px 0px 10px 2px #ffa17e;
+  }
+
+  .filter_thief {
+    background-image: url(assets/img/buttons/button_thief.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 3px solid #7cfc00;
+  }
+
+  .filter_thief:focus {
+    box-shadow: 0px 0px 10px 2px #c3ff86;
+  }
+
+  .filter_mage {
+    background-image: url(assets/img/buttons/button_mage.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 3px solid #5f005f;
+  }
+
+  .filter_mage:focus {
+    box-shadow: 0px 0px 10px 2px #795979;
+  }
+
+  .filter_rating {
+    background-image: url(assets/img/buttons/button_rating.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 3px solid var(--color-secondary);
+  }
+
+  .filter_rating:focus {
+    box-shadow: 0px 0px 10px 2px var(--color-primary);
+  }
+
+  .filter_price {
+    background-image: url(assets/img/buttons/button_septims.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 3px solid #ffd700;
+  }
+
+  .filter_price:focus {
+    box-shadow: 0px 0px 10px 2px #c9b77c;
   }
 }
