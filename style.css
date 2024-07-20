@@ -729,9 +729,13 @@ footer {
     }
   }
 
+  #filter {
+    gap: 0.5em
+  }
+
   .filter_button {
-    width: 100px;
-    height: 100px;
+    width: 46px;
+    height: 46px;
     border: 3px solid var(--color-primary);
     border-radius: 10px;
     background-color: var(--color-background);
@@ -741,7 +745,7 @@ footer {
   }
 
   .filter_all {
-    font-size: 16px;
+    font-size: 9px;
     border: 3px solid var(--color-primary);
   }
 
