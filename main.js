@@ -40,14 +40,14 @@ const products = [
     price: 20,
     stars: 2,
     seller: "Farengar",
-    class: "Rope",
+    class: "Robe",
     classImg: "assets/img/cards_icon/robes.png",
     image: "assets/img/armadura/boots_mage.png",
   },
   {
     name: "Steel Cuffed Boots",
     price: 25,
-    stars: 4,
+    stars: 3,
     seller: "Ulfberth",
     class: "Heavy Armor",
     classImg: "assets/img/cards_icon/heavy_armor.png",
@@ -65,7 +65,7 @@ const products = [
   {
     name: "Steel Imperial Gauntlets",
     price: 55,
-    stars: 4,
+    stars: 3,
     seller: "Ulfberth",
     class: "Heavy Armor",
     classImg: "assets/img/cards_icon/heavy_armor.png",
@@ -76,7 +76,7 @@ const products = [
     price: 30,
     stars: 4,
     seller: "Farengar",
-    class: "Rope",
+    class: "Robe",
     classImg: "assets/img/cards_icon/robes.png",
     image: "assets/img/armadura/gloves_thalmor.png",
   },
@@ -112,7 +112,7 @@ const products = [
     price: 10,
     stars: 1,
     seller: "Farengar",
-    class: "Rope",
+    class: "Robe",
     classImg: "assets/img/cards_icon/robes.png",
     image: "assets/img/armadura/hood_mageblue.png",
   },
@@ -121,7 +121,7 @@ const products = [
     price: 25,
     stars: 3,
     seller: "Arcadia",
-    class: "Rope",
+    class: "Robe",
     classImg: "assets/img/cards_icon/robes.png",
     image: "assets/img/armadura/hood_priest.png",
   },
@@ -130,7 +130,7 @@ const products = [
     price: 25,
     stars: 3,
     seller: "Farengar",
-    class: "Rope",
+    class: "Robe",
     classImg: "assets/img/cards_icon/robes.png",
     image: "assets/img/armadura/robe_mageblue.png",
   },
@@ -247,7 +247,7 @@ const products = [
     price: 95,
     stars: 5,
     seller: "Lod",
-    class: "One handed",
+    class: "Dagger",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/dagger_elve.png",
   },
@@ -265,7 +265,7 @@ const products = [
     price: 105,
     stars: 5,
     seller: "Lod",
-    class: "One handed",
+    class: "Mace",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/mace_orcish.png",
   },
@@ -274,7 +274,7 @@ const products = [
     price: 332,
     stars: 3,
     seller: "Tolfdir",
-    class: "One handed",
+    class: "Spell",
     classImg: "assets/img/cards_icon/spell.png",
     image: "assets/img/armas/spell_alteration.png",
   },
@@ -292,7 +292,7 @@ const products = [
     price: 390,
     stars: 5,
     seller: "Faralda",
-    class: "One handed",
+    class: "Spell",
     classImg: "assets/img/cards_icon/spell.png",
     image: "assets/img/armas/spell_destruction.png",
   },
@@ -319,7 +319,7 @@ const products = [
     price: 926,
     stars: 1,
     seller: "Tolfdir",
-    class: "One Handed",
+    class: "Staff",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/staff_conjuration.png",
   },
@@ -328,7 +328,7 @@ const products = [
     price: 1309,
     stars: 5,
     seller: "Faralda",
-    class: "One handed",
+    class: "Staff",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/staff_destruction.png",
   },
@@ -337,7 +337,7 @@ const products = [
     price: 613,
     stars: 3,
     seller: "Colette Marence",
-    class: "One handed",
+    class: "Staff",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/staff_restoration.png",
   },
@@ -364,7 +364,7 @@ const products = [
     price: 490,
     stars: 5,
     seller: "Lod",
-    class: "One handed",
+    class: "War Axe",
     classImg: "assets/img/cards_icon/one_handed.png",
     image: "assets/img/armas/waraxe_glass.png",
   },
@@ -373,8 +373,8 @@ const products = [
     price: 700,
     stars: 5,
     seller: "Balimund",
-    class: "One handed",
-    classImg: "assets/img/cards_icon/one_handed.png",
+    class: "Two handed",
+    classImg: "assets/img/cards_icon/two_handed.png",
     image: "assets/img/armas/warhammer_nordic.png",
   },
   {
@@ -445,7 +445,7 @@ const products = [
     price: 69,
     stars: 4,
     seller: "Ahkari",
-    class: "Potion",
+    class: "Magicka",
     classImg: "assets/img/cards_icon/potion.png",
     image: "assets/img/objetos/potion_magic.png",
   },
@@ -454,7 +454,7 @@ const products = [
     price: 311,
     stars: 4,
     seller: "Ahkari",
-    class: "Potion",
+    class: "Health",
     classImg: "assets/img/cards_icon/potion.png",
     image: "assets/img/objetos/potion_regeneration.png",
   },
@@ -463,7 +463,7 @@ const products = [
     price: 95,
     stars: 3,
     seller: "Ahkari",
-    class: "Potion",
+    class: "Stamina",
     classImg: "assets/img/cards_icon/potion.png",
     image: "assets/img/objetos/potion_stamina.png",
   },
@@ -484,6 +484,13 @@ function createShopCards(productsArray) {
     icon.alt = "Class Icon";
     div.appendChild(icon);
 
+    /*=== CLASS === */
+    let rol = document.createElement("div");
+    let rolText = document.createTextNode(product.class);
+    rol.className = "class-item_shop";
+    rol.appendChild(rolText);
+    div.appendChild(rol);
+
     /*=== IMAGE === */
     let img = document.createElement("img");
     img.className = "image-item_shop";
@@ -500,7 +507,7 @@ function createShopCards(productsArray) {
 
     /*=== SELLER === */
     let seller = document.createElement("h4");
-    let sellerText = document.createTextNode("Seller: " + product.seller);
+    let sellerText = document.createTextNode(product.seller);
     seller.className = "seller-item_shop";
     seller.appendChild(sellerText);
     div.appendChild(seller);
@@ -508,10 +515,6 @@ function createShopCards(productsArray) {
     /*=== RATING === */
     let divRating = document.createElement("div");
     divRating.className = "rating-item_shop";
-    let rating = document.createElement("h5");
-    let ratingText = document.createTextNode("Rating:");
-    rating.appendChild(ratingText);
-    divRating.appendChild(rating);
     div.appendChild(divRating);
 
     /*=== PRICE === */
@@ -523,8 +526,8 @@ function createShopCards(productsArray) {
 
     /*=== BUY BUTTON === */
     let buyButton = document.createElement("button");
-    let buyButtonText = document.createTextNode("BUY");
-    buyButton.className="button-item_shop"
+    let buyButtonText = document.createTextNode("Add to chard");
+    buyButton.className = "button-item_shop";
     buyButton.appendChild(buyButtonText);
     div.appendChild(buyButton);
 
@@ -542,6 +545,7 @@ function addStarsToProducts(productsArray) {
 
     for (let i = 0; i < product.stars; i++) {
       const starImg = document.createElement("img");
+      starImg.className = "star-item_shop";
       starImg.src = "assets/img/cards_icon/star_full.png";
       starImg.alt = "Star";
       ratingDiv.appendChild(starImg);
@@ -550,3 +554,44 @@ function addStarsToProducts(productsArray) {
 }
 
 addStarsToProducts(products); /* FUNCIONA :,) */
+
+/* Función que atribuye un estilo específico a la carta de la tienda
+según la clase que tenga el item */
+
+function styleByClass() {
+  const shopItems = document.querySelectorAll(".item_shop");
+
+  shopItems.forEach((item) => {
+    const classItems = item.querySelectorAll(".class-item_shop");
+
+    classItems.forEach((classItem) => {
+      if (
+        classItem.textContent === "Heavy Armor" ||
+        classItem.textContent === "Shield" ||
+        classItem.textContent === "Two handed" ||
+        classItem.textContent === "Mace" ||
+        classItem.textContent === "War Axe" ||
+        classItem.textContent === "Health"
+      ) {
+        item.classList.add("item_card_warrior");
+      } else if (
+        classItem.textContent === "Light Armor" ||
+        classItem.textContent === "Bow" ||
+        classItem.textContent === "One handed" ||
+        classItem.textContent === "Dagger" ||
+        classItem.textContent === "Stamina"
+      ) {
+        item.classList.add("item_card_thief");
+      } else if (
+        classItem.textContent === "Staff" ||
+        classItem.textContent === "Spell" ||
+        classItem.textContent === "Robe" ||
+        classItem.textContent === "Magicka"
+      ) {
+        item.classList.add("item_card_mage");
+      }
+    });
+  });
+}
+
+styleByClass();
